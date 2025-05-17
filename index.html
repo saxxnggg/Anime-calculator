@@ -10,8 +10,13 @@
 <body>
     <div class="app-container">
         <div class="calculator">
-            <div class="display">
-                <input type="text" id="result" readonly>
+            <div class="display-container">
+                <div class="display-border">
+                    <div class="display" id="display">
+                        <div class="history" id="history"></div>
+                        <input type="text" id="result" readonly>
+                    </div>
+                </div>
             </div>
             <div class="buttons">
                 <button onclick="appendToResult('7')">7</button>
@@ -54,7 +59,6 @@
             </div>
             
             <div class="character premium-character hidden" id="premiumCharacter">
-                <!-- Miku-like character -->
                 <div class="miku-hair"></div>
                 <div class="miku-face">
                     <div class="miku-eyes">
