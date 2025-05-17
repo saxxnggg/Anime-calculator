@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="result" readonly>
+            </div>
+            <div class="buttons">
+                <button onclick="appendToResult('7')">7</button>
+                <button onclick="appendToResult('8')">8</button>
+                <button onclick="appendToResult('9')">9</button>
+                <button onclick="appendToResult('/')">/</button>
+                
+                <button onclick="appendToResult('4')">4</button>
+                <button onclick="appendToResult('5')">5</button>
+                <button onclick="appendToResult('6')">6</button>
+                <button onclick="appendToResult('*')">*</button>
+                
+                <button onclick="appendToResult('1')">1</button>
+                <button onclick="appendToResult('2')">2</button>
+                <button onclick="appendToResult('3')">3</button>
+                <button onclick="appendToResult('-')">-</button>
+                
+                <button onclick="appendToResult('0')">0</button>
+                <button onclick="appendToResult('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendToResult('+')">+</button>
+                
+                <button onclick="clearResult()">C</button>
+                <button onclick="backspace()">⌫</button>
+                <button onclick="togglePremium()" class="premium-btn">Premium</button>
+            </div>
+        </div>
+        
+        <div class="character-container" id="characterContainer">
+            <div class="character free-character" id="character">
+                <div class="face">
+                    <div class="eyes">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="hair"></div>
+                <div class="body"></div>
+            </div>
+            
+            <div class="character premium-character hidden" id="premiumCharacter">
+                <!-- Miku-like character -->
+                <div class="miku-hair"></div>
+                <div class="miku-face">
+                    <div class="miku-eyes">
+                        <div class="miku-eye miku-left-eye"></div>
+                        <div class="miku-eye miku-right-eye"></div>
+                    </div>
+                    <div class="miku-mouth"></div>
+                </div>
+                <div class="miku-body"></div>
+                <div class="miku-twintails">
+                    <div class="twintail left-twintail"></div>
+                    <div class="twintail right-twintail"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="premium-modal hidden" id="premiumModal">
+        <div class="modal-content">
+            <h2>Unlock Premium Character!</h2>
+            <p>Get Hatsune Miku character for your calculator!</p>
+            <button onclick="unlockPremium()">Unlock for $2.99</button>
+            <button onclick="closePremiumModal()">Maybe Later</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
